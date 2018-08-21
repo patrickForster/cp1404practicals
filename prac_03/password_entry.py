@@ -1,23 +1,25 @@
 # password checker
+MIN_LENGTH = 4
+
+
 def main():
-    MIN_LENGTH = 4
     print("Please enter a valid password")
     print("Your password must be at least", MIN_LENGTH, "characters long")
-    password = get_password()
-    while len(password) < MIN_LENGTH:
-        print("Not enough characters!")
-        password = get_password()
-    print(password_printer(password))
+    password = get_password(MIN_LENGTH)
+    print_password(password)
 
 
-def get_password():
+def get_password(min_length):
     password = input("> ")
+    while len(password) < min_length:
+        print("Not enough characters!")
+        password = input("> ")
     return password
 
 
-def password_printer(password):
+def print_password(password):
     hidden_password = len(password) * '*'
-    return hidden_password
+    print(hidden_password)
 
 
 main()
