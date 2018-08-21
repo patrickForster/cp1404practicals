@@ -7,7 +7,7 @@ def main():
     while len(password) < MIN_LENGTH:
         print("Not enough characters!")
         password = get_password()
-    print(password_asterisks(password))
+    print(password_printer(password))
 
 
 def get_password():
@@ -15,7 +15,7 @@ def get_password():
     return password
 
 
-def password_asterisks(password):
+def password_printer(password):
     hidden_password = len(password) * '*'
     return hidden_password
 
