@@ -2,6 +2,7 @@
 CP1404/CP5632 Practical
 Car class
 """
+import math
 from prac_08.car import Car
 
 
@@ -22,7 +23,7 @@ class Taxi(Car):
 
     def get_fare(self):
         """Return the price for the taxi trip."""
-        return self.price_per_km * self.current_fare_distance
+        return round(self.price_per_km * self.current_fare_distance)
 
     def start_fare(self):
         """Begin a new fare."""
